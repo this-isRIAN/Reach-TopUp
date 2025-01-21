@@ -4,8 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-// Import komponen Games
-import List from './components/games/list';
+// Import komponen GameList
+import GameList from './components/games/list';
 
 function App() {
   return (
@@ -28,45 +28,12 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link active">Home</NavLink>
+                <NavLink to="/" className="nav-link">Home</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/games" className="nav-link">Games</NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Transactions</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categories
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Adventure</a></li>
-                  <li><a className="dropdown-item" href="#">Strategy</a></li>
-                </ul>
-              </li>
             </ul>
-            <form className="d-flex me-3">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search games..."
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-light" type="submit">Search</button>
-            </form>
-            <div className="d-flex">
-              <button className="btn btn-outline-light me-2">Login</button>
-              <button className="btn btn-success">Register</button>
-            </div>
           </div>
         </div>
       </nav>
@@ -79,10 +46,11 @@ function App() {
               <div>
                 <h1>Welcome to GameBoost</h1>
                 <p>Your one-stop platform for gaming experiences and seamless transactions.</p>
+                
               </div>
             }
           />
-          <Route ubpath="/games" element={<List />} />
+          <Route path="/games" element={<GameList />} />
         </Routes>
       </div>
     </Router>
